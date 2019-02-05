@@ -1,0 +1,16 @@
+# Environment & application
+/public/storage
+/public/hot
+/storage/*.key
+/storage/backups
+.env
+
+# Build files
+node_modules/
+vendor/
+
+# IDE
+/.idea
+/.vscode
+/.tags*
+/.tags_swap

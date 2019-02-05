@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+HELP="Use the \"help\", \"list\" or \"ls\" commands to list available scripts."
+
+# Determine which shell script to run.
+NAME=$1
+if [ ! $NAME ]; then
+    EXEC="./scripts/run.sh"
+elif [ $NAME = "help" ] || [ $NAME = "list" ] || [ $NAME = "ls" ]; then
+    printf "Available scripts:\n\n"
+    find ./scripts -maxdepth 1 -type f -printf "%f\n"
+    printf "\n%s\n" "$HELP"
+    exit 0
+elif [ $NAME = "bash" ] || [ $NAME = "shell" ]; then
+    EXEC="./scripts/run.sh bash"
+elif [[ $NAME =~ .*\.sh ]]; then
+    EXEC="./scripts/$NAME"
+else
+    EXEC="./scripts/$NAME.sh"
+fi
+
+# Make sure shell script is valid.
+if [ ! -x $EXEC ]; then
+    echo "\"$NAME\" is not a valid command. $HELP"
+    exit 1
+fi
+
+$EXEC "${@:2}"

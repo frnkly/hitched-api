@@ -1,0 +1,5 @@
+# Ignore all files not relevant to Docker image.
+.git/
+tmp/
+README.md
+run
