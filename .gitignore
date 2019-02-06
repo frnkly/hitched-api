@@ -4,6 +4,7 @@
 /storage/*.key
 /storage/backups
 .env
+.env.*
 
 # Build files
 node_modules/

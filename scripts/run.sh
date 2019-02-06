@@ -45,7 +45,7 @@ docker run \
     --mount type=bind,source="$(pwd)/src",target="/root/src" \
     --mount type=bind,source="$(pwd)/.env",target="/root/src/.env" \
     -w="/root/src" \
-    --env DOCKER_PORT=$DOCKER_PORT \
+    --env-file ./.env \
     --publish $DOCKER_PORT:$DOCKER_PORT \
     --interactive \
     --rm \
