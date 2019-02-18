@@ -1,4 +1,6 @@
-# Hitched API
+# [Lumen](https://lumen.laravel.com) [Docker](https://docs.docker.com) example
+
+A Dockerized Lumen app.
 
 ## Quickstart
 
